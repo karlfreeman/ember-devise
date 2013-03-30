@@ -1,0 +1,2818 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120920193543')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 31 Dec 2012 17:07:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "foo@bar.com"], ["encrypted_password", "$2a$10$UpmR9BOa2/x/ACWoKglFyOE6WLsxvrIWnpsiK0jMbIcy.6Fg6APNK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Mon, 31 Dec 2012 17:07:15 UTC +00:00]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-31 17:07:22 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Compiled libs/twitter/bootstrap/index.css  (1616ms)  (pid 18856)
+Compiled libs/twitter/bootstrap/variables.css  (1ms)  (pid 18856)
+Compiled libs/index.css  (1673ms)  (pid 18856)
+Compiled libs.css  (1684ms)  (pid 18856)
+Compiled angular-devise/typography.css  (0ms)  (pid 18856)
+Compiled angular-devise/index.css  (6ms)  (pid 18856)
+Compiled application.css  (34ms)  (pid 18856)
+Compiled jquery.js  (3ms)  (pid 18856)
+Compiled jquery_ujs.js  (0ms)  (pid 18856)
+Compiled bootstrap-transition.js  (0ms)  (pid 18856)
+Compiled bootstrap-affix.js  (0ms)  (pid 18856)
+Compiled bootstrap-alert.js  (0ms)  (pid 18856)
+Compiled bootstrap-button.js  (0ms)  (pid 18856)
+Compiled bootstrap-carousel.js  (0ms)  (pid 18856)
+Compiled bootstrap-collapse.js  (0ms)  (pid 18856)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 18856)
+Compiled bootstrap-modal.js  (0ms)  (pid 18856)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 18856)
+Compiled bootstrap-tab.js  (0ms)  (pid 18856)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 18856)
+Compiled bootstrap-popover.js  (0ms)  (pid 18856)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 18856)
+Compiled bootstrap.js  (139ms)  (pid 18856)
+Compiled libs/angular/angular.js  (24ms)  (pid 18856)
+Compiled libs/angular/angular-resource.js  (0ms)  (pid 18856)
+Compiled libs/angular/angular-cookies.js  (0ms)  (pid 18856)
+Compiled libs/index.js  (251ms)  (pid 18856)
+Compiled libs.js  (259ms)  (pid 18856)
+Completed 500 Internal Server Error in 2133ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:5)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___278403752145965692_70266273488240'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-12-31 17:07:24 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:5)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___278403752145965692_70266273488240'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-31 17:08:22 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Compiled libs/index.css  (0ms)  (pid 18856)
+Compiled libs.css  (0ms)  (pid 18856)
+Completed 500 Internal Server Error in 48ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:5)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___278403752145965692_70266273488240'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-12-31 17:08:22 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:5)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___278403752145965692_70266273488240'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-31 17:08:23 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:5)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___278403752145965692_70266273488240'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-12-31 17:08:23 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:5)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___278403752145965692_70266273488240'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-31 17:08:51 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Compiled angular-devise/app/app.js  (0ms)  (pid 18856)
+Compiled angular-devise/app/csrf.js  (0ms)  (pid 18856)
+Compiled angular-devise/app/utf8.js  (0ms)  (pid 18856)
+Compiled angular-devise/app/push-state.js  (0ms)  (pid 18856)
+Compiled angular-devise/app/loading.js  (1ms)  (pid 18856)
+Compiled angular-devise/app/router.js  (1ms)  (pid 18856)
+Compiled angular-devise/app/index.js  (70ms)  (pid 18856)
+Compiled angular-devise/resources/user.js  (0ms)  (pid 18856)
+Compiled angular-devise/services/session.js  (0ms)  (pid 18856)
+Compiled angular-devise/directives/active-link.js  (0ms)  (pid 18856)
+Compiled angular-devise/controllers/registrations.js  (0ms)  (pid 18856)
+Compiled angular-devise/controllers/sessions.js  (0ms)  (pid 18856)
+Compiled angular-devise/index.js  (132ms)  (pid 18856)
+Compiled application.js  (140ms)  (pid 18856)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 234ms (Views: 233.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:09:20 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled libs/index.css  (4ms)  (pid 18856)
+Compiled libs.css  (0ms)  (pid 18856)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-31 17:10:00 +0000
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>0}, "_utf8"=>"&#9731;", "session"=>{"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>0}, "_utf8"=>"&#9731;"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'foo@bar.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-31 17:10:00.359060', "current_sign_in_at" = '2012-12-31 17:10:00.359060', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2012-12-31 17:10:00.359774' WHERE "users"."id" = 1
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 101ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:10:03 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:10:04 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:10:05 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-12-31 17:10:10 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"sign_out"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:10:52 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Compiled angular-devise/app/index.js  (2ms)  (pid 18856)
+Compiled angular-devise/index.js  (9ms)  (pid 18856)
+Compiled application.js  (0ms)  (pid 18856)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-31 17:11:39 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:11:50 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-31 17:11:58 +0000
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>0}, "_utf8"=>"&#9731;", "session"=>{"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>0}, "_utf8"=>"&#9731;"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'foo@bar.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2012-12-31 17:11:59.059040', "sign_in_count" = 2, "updated_at" = '2012-12-31 17:11:59.059548' WHERE "users"."id" = 1[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+Completed 201 Created in 81ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:12:03 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:14:33 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-31 17:15:10 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2012-12-31 17:15:25 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2012-12-31 17:15:28 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2012-12-31 17:15:32 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2012-12-31 17:15:47 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-31 17:15:52 +0000
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>0}, "_utf8"=>"&#9731;", "session"=>{"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>0}, "_utf8"=>"&#9731;"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'foo@bar.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-31 17:11:59.059040', "current_sign_in_at" = '2012-12-31 17:15:53.073284', "sign_in_count" = 3, "updated_at" = '2012-12-31 17:15:53.073783' WHERE "users"."id" = 1
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 82ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:15:56 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:15:58 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:16:02 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-12-31 17:16:07 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"sign_out"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:16:09 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-12-31 17:18:21 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:18:22 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:18:23 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:22:25 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Compiled angular-devise/app/router.js  (0ms)  (pid 18856)
+Compiled angular-devise/app/index.js  (16ms)  (pid 18856)
+Compiled angular-devise/controllers/home.js  (0ms)  (pid 18856)
+Compiled angular-devise/index.js  (41ms)  (pid 18856)
+Compiled application.js  (1ms)  (pid 18856)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 120ms (Views: 119.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:22:36 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:22:37 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:23:27 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:23:35 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:23:39 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:23:47 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:23:48 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:07 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:26 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:27 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:28 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:32 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:55 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Compiled angular-devise/services/session.js  (0ms)  (pid 18856)
+Compiled angular-devise/index.js  (2ms)  (pid 18856)
+Compiled application.js  (0ms)  (pid 18856)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 37.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:24:55 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-12-31 17:25:03 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"sign_out"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:25:04 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:25:05 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:25:11 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-12-31 17:25:21 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"sign_out"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:25:23 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-12-31 17:30:52 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Compiled angular-devise/app/router.js  (0ms)  (pid 18856)
+Compiled angular-devise/app/index.js  (2ms)  (pid 18856)
+Compiled angular-devise/index.js  (2ms)  (pid 18856)
+Compiled application.js  (0ms)  (pid 18856)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 78.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2012-12-31 17:31:11 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2012-12-31 17:31:17 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 12:40:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 205ms (Views: 202.7ms | ActiveRecord: 2.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 12:42:29 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 114ms
+
+ActionView::Template::Error (File to import not found or unreadable: twitter/bootstrap.
+Load path: Sass::Rails::Importer(/Users/karlfreeman/Development/github/angular-devise/app/assets/stylesheets/libs/twitter/bootstrap/index.css.scss)
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/stylesheets/libs/twitter/bootstrap/index.css.scss)):
+    5:     <title><%= content_for?(:title) ? yield(:title) : "Angular Devise" %></title>
+    6:     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Angular Devise" %>">
+    7:     <link rel="shortcut icon" href="<%= asset_path("brand/favicon.ico") %>" type="image/x-icon" />
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+  app/assets/stylesheets/libs/twitter/bootstrap/index.css.scss:2
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2493226880308702888_70354363842040'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 12:42:29 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 53ms
+
+ActionView::Template::Error (File to import not found or unreadable: twitter/bootstrap.
+Load path: Sass::Rails::Importer(/Users/karlfreeman/Development/github/angular-devise/app/assets/stylesheets/libs/twitter/bootstrap/index.css.scss)
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/stylesheets/libs/twitter/bootstrap/index.css.scss)):
+    5:     <title><%= content_for?(:title) ? yield(:title) : "Angular Devise" %></title>
+    6:     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Angular Devise" %>">
+    7:     <link rel="shortcut icon" href="<%= asset_path("brand/favicon.ico") %>" type="image/x-icon" />
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+  app/assets/stylesheets/libs/twitter/bootstrap/index.css.scss:2
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2493226880308702888_70354363842040'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 12:42:36 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 104ms (Views: 103.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-26 12:43:50 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:02:47 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Compiled angular-devise/resources/user.js  (0ms)  (pid 53653)
+Compiled angular-devise/services/session.js  (0ms)  (pid 53653)
+Compiled angular-devise/index.js  (2ms)  (pid 53653)
+Compiled application.js  (0ms)  (pid 53653)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 175ms (Views: 173.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-03-26 13:03:02 +0000
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"foo-4063@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "_utf8"=>"&#9731;", "registration"=>{"user"=>{"email"=>"foo-4063@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "_utf8"=>"&#9731;"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:03:02 +0000
+Processing by HomeController#index as JSON
+  Rendered home/index.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:09 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:10 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:22 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:23 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-26 13:03:29 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 158ms (Views: 156.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-26 13:03:29 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:31 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:31 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:03:52 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:04:06 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 162ms (Views: 160.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2013-03-26 13:04:19 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"sign_out"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2013-03-26 13:04:25 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"logout"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-03-26 13:04:41 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:04:41 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-26 13:04:46 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-03-26 13:04:48 +0000
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>1}, "_utf8"=>"&#9731;", "session"=>{"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>1}, "_utf8"=>"&#9731;"}}
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'foo@bar.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "remember_created_at" = '2013-03-26 13:04:48.809306', "updated_at" = '2013-03-26 13:04:48.809684' WHERE "users"."id" = 1[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-31 17:15:53.073284', "current_sign_in_at" = '2013-03-26 13:04:48.815863', "sign_in_count" = 4, "updated_at" = '2013-03-26 13:04:48.816254' WHERE "users"."id" = 1
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 94ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-03-26 13:04:52 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2013-03-26 13:04:52.222274' WHERE "users"."id" = 1
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:04:52 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:04:54 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 22ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:04:55 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:20:05 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 102ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:3)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2745176668223011196_70246781095220'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:20:06 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 54ms
+
+ActionView::Template::Error (require_tree argument must be a directory
+  (in /Users/karlfreeman/Development/github/angular-devise/app/assets/javascripts/angular-devise/index.js:3)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2745176668223011196_70246781095220'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:21:02 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled angular-devise/index.js  (2ms)  (pid 59776)
+Compiled application.js  (0ms)  (pid 59776)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-26 13:22:00 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-26 13:22:01 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-26 13:22:01 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-26 13:23:26 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (1.4ms)
+Compiled angular-devise/services/session.js  (0ms)  (pid 60246)
+Compiled angular-devise/index.js  (4ms)  (pid 60246)
+Compiled application.js  (0ms)  (pid 60246)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 125ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-03-26 13:23:29 +0000
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>1}, "_utf8"=>"&#9731;", "session"=>{"user"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]", "remember_me"=>1}, "_utf8"=>"&#9731;"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'foo@bar.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "remember_created_at" = '2013-03-26 13:23:29.709523', "updated_at" = '2013-03-26 13:23:29.710168' WHERE "users"."id" = 1[0m
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-03-26 13:04:48.815863', "current_sign_in_at" = '2013-03-26 13:23:29.733817', "sign_in_count" = 5, "updated_at" = '2013-03-26 13:23:29.734315' WHERE "users"."id" = 1
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 168ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-03-26 13:23:37 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:23:37 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-03-26 13:23:41 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2013-03-26 13:23:41.211343' WHERE "users"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:23:41 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-26 13:23:42 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:24:08 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 113ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:14 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-26 13:24:23 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:26 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-26 13:24:30 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:32 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:37 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:24:38 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-26 13:24:39 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:40 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:42 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:44 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-26 13:24:45 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:01:14 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.6ms)
+Compiled ember-devise/typography.css  (0ms)  (pid 31989)
+Compiled ember-devise/index.css  (4ms)  (pid 31989)
+Compiled application.css  (10ms)  (pid 31989)
+Compiled libs/index.js  (2ms)  (pid 31989)
+Compiled libs.js  (0ms)  (pid 31989)
+Compiled ember-devise/index.js  (0ms)  (pid 31989)
+Compiled application.js  (6ms)  (pid 31989)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 147ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:01:16 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-30 22:01:16 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-30 22:01:17 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-30 22:01:17 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:01:18 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:01:18 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:09:26 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:11:07 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:13:41 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:13:42 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:13:43 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:15:30 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:15:31 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:15:37 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:04 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:05 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:06 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:25 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:26 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:27 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:30 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:40 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:42 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:57 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:18:58 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:19:01 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:19:27 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/content.css  (0ms)  (pid 32293)
+Compiled ember-devise/index.css  (5ms)  (pid 32293)
+Compiled application.css  (0ms)  (pid 32293)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:19:48 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:19:53 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/content.css  (0ms)  (pid 32293)
+Compiled ember-devise/index.css  (1ms)  (pid 32293)
+Compiled application.css  (0ms)  (pid 32293)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:20:25 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:20:47 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:23:22 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/content.css  (0ms)  (pid 32293)
+Compiled ember-devise/index.css  (1ms)  (pid 32293)
+Compiled application.css  (0ms)  (pid 32293)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:23:30 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:24:47 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/content.css  (0ms)  (pid 32293)
+Compiled ember-devise/index.css  (1ms)  (pid 32293)
+Compiled application.css  (0ms)  (pid 32293)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:55:20 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (1.5ms)
+Compiled ember-devise/content.css  (0ms)  (pid 37530)
+Compiled ember-devise/index.css  (1ms)  (pid 37530)
+Compiled application.css  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 128ms (Views: 128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:55:21 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-30 22:55:22 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:55:23 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 22:56:40 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-30 22:56:40 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-03-30 22:56:41 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"login"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 22:56:42 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:04:02 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled libs/ember/ember-1.0.0-rc.2.js  (9ms)  (pid 37530)
+Compiled libs/handlebars/handlebars-1.0.0-rc.3.js  (0ms)  (pid 37530)
+Compiled libs/index.js  (44ms)  (pid 37530)
+Compiled libs.js  (1ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 128ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:04:23 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:04:37 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled libs/index.js  (3ms)  (pid 37530)
+Compiled libs.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 79ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:04:39 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:05:05 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:05:09 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:05:34 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.4ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:05:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:05:40 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:06 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:07 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:26 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (couldn't find file 'app'
+  (in /Users/karlfreeman/Development/github/ember-devise/app/assets/javascripts/ember-devise/index.js:1)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2974181264882656416_70097341416880'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.9ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:06:26 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (couldn't find file 'app'
+  (in /Users/karlfreeman/Development/github/ember-devise/app/assets/javascripts/ember-devise/index.js:1)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2974181264882656416_70097341416880'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:27 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (couldn't find file 'app'
+  (in /Users/karlfreeman/Development/github/ember-devise/app/assets/javascripts/ember-devise/index.js:1)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2974181264882656416_70097341416880'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:06:27 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (couldn't find file 'app'
+  (in /Users/karlfreeman/Development/github/ember-devise/app/assets/javascripts/ember-devise/index.js:1)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2974181264882656416_70097341416880'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (couldn't find file 'app'
+  (in /Users/karlfreeman/Development/github/ember-devise/app/assets/javascripts/ember-devise/index.js:1)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2974181264882656416_70097341416880'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:06:35 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (couldn't find file 'app'
+  (in /Users/karlfreeman/Development/github/ember-devise/app/assets/javascripts/ember-devise/index.js:1)):
+    8:     <%= stylesheet_link_tag "libs", :media => "all" %>
+    9:     <%= stylesheet_link_tag "application", :media => "all" %>
+    10:     <%= javascript_include_tag "libs" %>
+    11:     <%= javascript_include_tag "application" %>
+    12:     <%= csrf_meta_tags %>
+    13:     <%= yield(:head) %>
+    14:   </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2974181264882656416_70097341416880'
+
+
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered vendor/bundle/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:53 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (6ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:06:54 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:06:58 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:07:08 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:07:10 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:07:13 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:07:15 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:07:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled libs/index.js  (2ms)  (pid 37530)
+Compiled libs.js  (0ms)  (pid 37530)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:07:47 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:08:30 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:08:31 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:08:53 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:08:54 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:09:02 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:09:53 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (1ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:09:54 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:14 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:15 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:30 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:34 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:35 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:40 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:10:48 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:11:33 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:11:38 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:12:33 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:12:34 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:12:36 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:13:06 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:13:34 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:13:35 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:13:47 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:14:28 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:14:48 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.4ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:14:51 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:14:55 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:15:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.2ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:16:29 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:16:47 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:05 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:07 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:11 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:19 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.3ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:56 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:57 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:17:58 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:18:07 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:18:12 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:18:31 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:19:03 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:19:10 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:19:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:19:37 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:19:57 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:19:58 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:20:14 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:20:27 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:20:44 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:20:45 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:20:53 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:21:10 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:21:11 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:21:13 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:21:36 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:21:40 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:21:49 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:22:00 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:22:41 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:22:42 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:23:21 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:23:22 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:23:46 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:23:47 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:29:55 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:30:03 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:29 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:30 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:42 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:50 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:51 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:31:59 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:32:00 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:33:12 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:33:20 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:33:23 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:00 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:13 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:14 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:22 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:32 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:36 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:34:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:35:52 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:09 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:14 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:28 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:29 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:36:34 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:36:38 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:36:38 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:36:38 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:39 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-03-30 23:36:39 +0000
+Processing by HomeController#index as 
+  Parameters: {"page"=>"favicon"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:39 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:36:40 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:37:00 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:37:13 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:37:14 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:37:45 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:38:02 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:38:04 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:39:18 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:39:19 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:39:37 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.3ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:39:55 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:39:56 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:41:06 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.2ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:41:18 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:42:03 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:42:04 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:44:19 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.1ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:45:22 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:45:24 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:46:46 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:48:03 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+Compiled ember-devise/app.js  (0ms)  (pid 37530)
+Compiled ember-devise/index.js  (0ms)  (pid 37530)
+Compiled application.js  (0ms)  (pid 37530)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:48:04 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-30 23:48:06 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:48:07 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2013-03-30 23:48:07 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"register"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:48:09 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-03-30 23:48:19 +0000
+Processing by HomeController#index as HTML
+  Parameters: {"page"=>"home"}
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-30 23:48:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.erb within layouts/application (0.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 33.0ms | ActiveRecord: 0.0ms)

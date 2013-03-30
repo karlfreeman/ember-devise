@@ -1,5 +1,10 @@
-# Ember.js Authentication UI with Ruby on Rails and Devise
+# [Ember.js] Authentication UI with Ruby on Rails and [Devise]
 
-An example Rails app that uses a Ember.js UI for user signup, authentication, and password retrieval.
+An example Rails app that uses a [Ember.js] UI for user signup, authentication, and password retrieval.
 
-[Demo](http://ember-devise.herokuapp.com)
+↪ [heroku demo](http://ember-devise.herokuapp.com)
+
+*a work in progress...*
+
+[ember.js]: http://emberjs.com/
+[devise]: https://github.com/plataformatec/devise
