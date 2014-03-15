@@ -2,7 +2,7 @@
 
 An **outdated** example Rails app that uses a [Ember.js] UI for user signup, authentication, & password retrieval.
 
-↪ [heroku demo](http://ember-devise.herokuapp.com)
+↪ [Heroku demo](http://ember-devise.herokuapp.com)
 
 [ember.js]: http://emberjs.com
 [devise]: https://github.com/plataformatec/devise
